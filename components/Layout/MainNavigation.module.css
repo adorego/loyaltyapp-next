@@ -1,0 +1,20 @@
+.shareButton{
+    margin-top: 2rem;
+    margin: auto;
+    text-align: center;
+    max-width: 80vw;
+}
+.main{
+    margin-left:2%;
+    margin-right: 2%;
+    min-height: 480px;
+}
+
+@media screen and (min-width:500px) {
+.shareButton{
+    margin-top: 2rem;
+    width: 40vw;
+    max-width: 480px;
+    margin: auto;
+}
+}

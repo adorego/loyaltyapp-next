@@ -1,0 +1,38 @@
+
+.hamburguer{
+    background-color: transparent; 
+    height: 4rem;
+    width: 4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    
+}
+
+.hamburguer:hover{
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+.icon{
+    font-size:26px;
+    background-color: inherit;
+    color: white;
+    border: 0;
+}
+
+.borderButton{
+    /* border: 1px solid lightgrey; */
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 0.5rem;
+    color: white;
+    font-size: 18px;
+    width: auto;
+    height: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display:inline-block;
+    /* box-shadow: 2px 3px #AA1000; */
+}

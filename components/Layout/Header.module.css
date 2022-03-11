@@ -1,0 +1,63 @@
+
+.header{
+    display: flex;
+    flex-direction: column;
+    height: 220px;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+}
+
+.bars{
+    padding: 0;
+    color: white;
+    width: 2rem;
+    font-size: 3rem;
+}
+
+.firstRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+}
+
+
+
+.secondRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.logo{
+    width: 160px;
+    height: auto;
+}
+
+.welcomeSection{
+    margin-top: 2%;
+    text-align: end;
+}
+
+.welcomeTitle{
+    color: white;
+    font-size: 16px;
+    margin-left: 1rem;
+}
+
+.logo_text{
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+}
+
+@media screen and (min-width:500px) {
+    .header{
+        padding-left: 5vw;
+        padding-right: 5vw;
+    
+    }
+}

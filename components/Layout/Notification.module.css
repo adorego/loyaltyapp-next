@@ -1,0 +1,29 @@
+.notification{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    background-color: #800020;
+    color: white;
+    /* border: 1px solid; */
+    padding: 10px;
+    box-shadow: 1px 5px #888888;
+    z-index: 100;
+    padding: 10px;
+}
+
+.closeButton{
+    align-self: flex-end;
+   
+}
+
+.message{
+    font-size: 16px;
+}
+
+.main{
+    color: grey;
+}

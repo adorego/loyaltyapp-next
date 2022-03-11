@@ -1,0 +1,11 @@
+.box{
+    max-width: 480px;
+    min-height: 300px;
+    text-align: center;
+
+}
+.box p{
+    margin-top:20px;
+    margin-left: 5px;
+    margin-right: 5px;
+}

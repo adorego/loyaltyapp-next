@@ -1,0 +1,11 @@
+.colorPicker{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.siguienteBox{
+    margin-top: 5%;
+    text-align: center;
+}

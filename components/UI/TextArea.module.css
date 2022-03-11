@@ -1,0 +1,22 @@
+.label{
+    color: gray;
+}
+.textArea{
+    
+    width: 98%;
+
+}
+
+
+.invalid{
+    border: 2px red solid;
+}
+
+.errorMessage{
+    padding: 0;
+    margin: 0;
+    text-align: end;
+    color: red;
+    margin-bottom: 20px;
+    font-size: 12px;
+}

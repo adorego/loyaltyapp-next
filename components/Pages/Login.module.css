@@ -1,0 +1,35 @@
+.form{
+    max-width: 80vw;
+    margin: auto;
+
+}
+.title{
+    text-align: center;
+}
+
+.submitButton{
+    text-align: center;
+}
+
+
+
+.recoverLink{
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media screen and (min-width:500px) {
+    .submitButton{
+        margin: auto;
+        width: 40vw;
+        max-width: 480px;
+    }
+    
+    .form{
+        max-width:480px;
+        margin: auto;
+    
+    }
+}

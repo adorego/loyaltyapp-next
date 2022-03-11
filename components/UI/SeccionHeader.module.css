@@ -1,0 +1,33 @@
+.title{
+    color: grey;
+}
+.subtitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.circle{
+    /* display: table; */
+    background-color: #B11016;
+    border: 2px solid #666;
+    text-align: center;
+    font: 24px Arial, sans-serif;
+    color: white;
+    border-radius:50%;
+    width:36px;
+    height:36px;
+    padding: 2px;
+    margin-right: 2%;
+    vertical-align: middle;
+}
+.number{
+    /* display: table-cell;
+    vertical-align: middle; */
+    align-self: center;
+}
+
+.subtitleText{
+    color: grey;
+}

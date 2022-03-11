@@ -1,0 +1,26 @@
+.box{
+    display: table;
+    background-color: #C4C4C4;
+    background-size: 90vw;
+    width: 98%;
+    height: 188px;
+    text-align: center;
+    vertical-align: middle;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+    
+    /* background-size: cover; */
+}
+
+.selector{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.label{
+    margin-bottom: 2%;
+    color: grey;
+}

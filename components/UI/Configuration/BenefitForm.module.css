@@ -1,0 +1,24 @@
+.form{
+    
+    max-width: 90vw;
+    margin: auto;
+
+}
+
+.title{
+    color: grey;
+    text-align: start;
+}
+
+.descriptionTextArea{
+    width: 90vw;
+    color: grey;
+}
+
+.labelTextDescription{
+    color: grey;
+}
+
+.submitButton{
+    text-align: center;
+}

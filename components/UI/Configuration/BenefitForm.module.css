@@ -1,24 +1,53 @@
+.pageHeaderContainer{
+    position: relative;
+    margin-bottom: 5vh;
+}
+
+.exclusiveComunicationContainer{
+    position: relative;
+    margin-bottom: 5vh;
+}
+
+.descriptionContainer{
+    position: relative;
+    margin-bottom: 5vh;
+}
+
 .form{
-    
-    max-width: 90vw;
     margin: auto;
-
+    
+    
 }
-
-.title{
-    color: grey;
-    text-align: start;
-}
-
-.descriptionTextArea{
-    width: 90vw;
-    color: grey;
-}
-
-.labelTextDescription{
-    color: grey;
-}
-
-.submitButton{
+.submitButtonContainer{
+    margin-bottom: 32px;
+    width: 100%;
     text-align: center;
+}
+
+.titleContainer{
+    margin-top: 16px;
+    margin-bottom: 5vh;
+}
+
+.showExampleLink{
+    color: var(--secondary-color);
+    text-decoration: underline;
+    
+}
+
+.imageContainer{
+    margin-bottom: 5vh;
+}
+
+@media screen and (max-width:600px) {
+    .form{
+        width: 90vw;
+    }
+}
+
+@media screen and (min-width:600px){
+    .form{
+        width: 420px;
+        margin: auto;
+    }
 }

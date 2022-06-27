@@ -1,0 +1,222 @@
+.imageContainer{
+    padding: 0;
+    width: 100%;
+    height: auto;
+    position: relative;
+    border: 1px solid grey;
+}
+.BenefitViewLinkContainer{
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.BenefitViewLink{
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+
+.SectionTitleContainer{
+    position: relative;
+    width: 100%;
+    border:1px solid lightgray;
+    height: 100px;
+    
+
+}
+.title{
+    font-size: 30px;
+    padding-top: 15px;
+    padding-right: 10px;
+    padding-left:10px;
+}
+.RightArrow{
+    position: absolute;
+    top:30px;
+    right: 0%;
+    font-size: 48px;
+}
+
+.LeftArrow{
+    position: absolute;
+    top:30px;
+    left: 0%;
+    font-size: 48px;
+}
+.CrudToolBarContainer{
+    position: absolute;
+    top: 2px;
+    right: 5px;
+}
+
+.TitleContainer{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* border: 1px solid grey; */
+    border-bottom: 1px solid lightgray;
+}
+.TitleHeader{
+    padding-left: 10px; 
+    padding-right: 10px;
+    text-align: start;
+    text-decoration: underline;
+    font-size: 16px;
+    width: 40%;
+    height: auto;
+}
+
+.TitleContent{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    text-align: start;
+    width: 60%;
+    height: auto;
+}
+
+.OneTextOrMultipleContainer{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* border: 1px solid grey; */
+    border-bottom: 1px solid lightgray;
+}
+.OneTextOrMultipleHeader{
+    padding-left: 10px; 
+    padding-right: 10px;
+    text-align: start;
+    text-decoration: underline;
+    font-size: 16px;
+    width: 40%;
+    height: auto;
+}
+.OneTextOrMultipleContent{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    text-align: start;
+    width: 60%;
+    height: auto;
+}
+.Text1Container{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* border: 1px solid grey; */
+    border-bottom: 1px solid lightgray;
+}
+.Text1Header{
+    padding-left: 10px; 
+    padding-right: 10px;
+    text-align: start;
+    text-decoration: underline;
+    font-size: 16px;
+    width: 40%;
+    height: auto;
+}
+.Text1Content{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    text-align: start;
+    width: 60%;
+    height: auto;
+}
+.Text2Container{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* border: 1px solid grey; */
+    border-bottom: 1px solid lightgray;
+}
+.Text2Header{
+    padding-left: 10px; 
+    padding-right: 10px;
+    text-align: start;
+    text-decoration: underline;
+    font-size: 16px;
+    width: 40%;
+    height: auto;
+}
+.Text2Content{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    text-align: start;
+    width: 60%;
+    height: auto;
+}
+.Text3Container{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* border: 1px solid grey; */
+    border-bottom: 1px solid lightgray;
+}
+.Text3Header{
+    padding-left: 10px; 
+    padding-right: 10px;
+    text-align: start;
+    text-decoration: underline;
+    font-size: 16px;
+    width: 40%;
+    height: auto;
+}
+.Text3Content{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    text-align: start;
+    width: 60%;
+    height: auto;
+}
+.Text4Container{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* border: 1px solid grey; */
+    border-bottom: 1px solid lightgray;
+}
+.Text4Header{
+    padding-left: 10px; 
+    padding-right: 10px;
+    text-align: start;
+    text-decoration: underline;
+    font-size: 16px;
+    width: 40%;
+    height: auto;
+}
+.Text4Content{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    text-align: start;
+    width: 60%;
+    height: auto;
+}

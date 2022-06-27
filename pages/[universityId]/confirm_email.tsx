@@ -18,7 +18,7 @@ const EmailConfirmation = () =>{
              const currentValue = inputValue.current.value;
              if(currentValue === verification_code){
                 dispatch(authActions.validate_email());
-                router.push('/' + router.query.universityId + '/configuration');
+                router.push('/login');
             }
         }
        
@@ -28,7 +28,12 @@ const EmailConfirmation = () =>{
 
             <p>Por favor ingresá el código que te hemos enviado por correo</p>
             <Input label="" ref={inputValue}  />
-            <Button onClickHandler={onValidate} classOfButton="borderButton"  label="Confirmar" additionalStyle={{color:"grey"}}/>
+            <Button onClickHandler={onValidate}  
+            isAvailable={true} 
+            label="Confirmar" 
+            additionalStyle={{color:"var(--on-primary-text-color)", 
+            backgroundColor:"var(--primary-color)",
+            margin:"16px 0px 0px 0px", width:"320px"}}/>
         </div>
     )
 }

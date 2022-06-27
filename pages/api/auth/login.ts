@@ -12,7 +12,7 @@ import jwt from 'jsonwebtoken';
 const handler = async (request:NextApiRequest, response:NextApiResponse) =>{
 
     if(request.method === 'POST'){
-        console.log('Llegó un request', request.body);
+        
         let dbClient;
         try{
 

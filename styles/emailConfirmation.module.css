@@ -1,7 +1,8 @@
 .box{
-    max-width: 480px;
+    max-width: 420px;
     min-height: 300px;
     text-align: center;
+    margin: auto;
 
 }
 .box p{

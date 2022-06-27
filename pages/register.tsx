@@ -1,3 +1,4 @@
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import React, { Fragment, useCallback, useState } from "react";
 
 import Button from "../components/UI/Button";
@@ -7,13 +8,15 @@ import { RegisterInterface } from "../data/Register-interface";
 import { authActions } from "../store/auth-slice";
 import classes from "../styles/Register.module.css";
 import classesSpinner from "../styles/spinner.module.css";
+import { uiActions } from "../store/ui-slice";
 import { useAppDispatch } from "../hooks/store-hooks";
 import useInput from "../hooks/use-input";
 import {useRouter} from "next/router";
 
 const Register = (props:RegisterInterface) => {
     const [showSpinner, setShowSpinner] = useState(false);
-    const [error, setError] = useState({state:false, message:'Hubo un error'});
+    const [showEye, setShowEye] = useState(true);
+    const [showEyeRecovery, setShowEyeRecovery] = useState(true);
     const dispatch = useAppDispatch();
     const router = useRouter();
 
@@ -134,7 +137,7 @@ const Register = (props:RegisterInterface) => {
         if(!isInputUniversityNameInvalid && !isInputEmailInvalid && !isInputPasswordInvalid && !isInputRepeatedPasswordInvalid && !isInputSiglaInvalid){
             //Submit object to backend
             const dataToSend = {universityName, sigla, email, password};
-            // console.log('Before send:', dataToSend )
+            
             setShowSpinner(true);
             const response = await fetch('/api/auth/register',{
                 method:'POST',
@@ -145,19 +148,15 @@ const Register = (props:RegisterInterface) => {
             });
 
 
-            const response_object = await response.json();
+            const dataResponse = await response.json();
            
-            //console.log(data);
-            console.log("response.ok", response.ok,"response.json():", response_object );
+            
             if(response.ok){
-                dispatch(authActions.register({...response_object.data}));
-                router.push(`/${response_object.data.university.sigla}/confirm_email`);
+                dispatch(authActions.register({...dataResponse.data}));
+                router.push(`/${dataResponse.data.university.sigla}/confirm_email`);
                 
             }else{
-                setError({
-                    state:true,
-                    message:response_object.name
-                })
+                dispatch(uiActions.showNotification({show:true, message:`Ocurrió un error durante el registro:${dataResponse.name}`, color:"red"}))
             }
             setShowSpinner(false);
         }
@@ -168,7 +167,6 @@ const Register = (props:RegisterInterface) => {
     
     return(
         <Fragment>
-            {error.state && <Notification message={error.message} />}
             {showSpinner && <div className={classesSpinner['lds-dual-ring']}></div>}
             {!showSpinner && <form className={classes.form} autoComplete="off" onSubmit={onSubmit}>
                     <h3 className={classes.title}>Bienvenido, registrá tu Universidad!</h3>
@@ -190,8 +188,7 @@ const Register = (props:RegisterInterface) => {
                     onFocusHandler={onFocusSigla}
                     isInputInvalid={isInputSiglaInvalid}
                     errorMessage={errorMessageSigla}
-                    helpMessage="Ej:ucsa, uca, una"
-                    additionalAttributes={{type:"text", autoComplete:"off"}}/>
+                    additionalAttributes={{type:"text", autoComplete:"off", margin:"16px 0px 0px 0px"}}/>
                     
                     <Input id="emailId" 
                     label="Correo" 
@@ -202,25 +199,38 @@ const Register = (props:RegisterInterface) => {
                     errorMessage={errorMessageEmail}
                     additionalAttributes={{type:"email", autoComplete:"off"}}/>
                    
-                    <Input id="passwordId" 
-                    label="Clave" 
-                    value={password} 
-                    onChangeHandler={onChangePasswordHandler}
-                    onBlurHandler={onBlurPasswordHandler}
-                    isInputInvalid={isInputPasswordInvalid}
-                    errorMessage={errorMessagePassword}
-                    additionalAttributes={{type:"password", autoComplete:"off"}}/>
+                   <div className={classes.passwordContainer}>
+                        <Input id="passwordId" 
+                        label="Clave" 
+                        value={password} 
+                        onChangeHandler={onChangePasswordHandler}
+                        onBlurHandler={onBlurPasswordHandler}
+                        isInputInvalid={isInputPasswordInvalid}
+                        errorMessage={errorMessagePassword}
+                        additionalAttributes={{type:showEye ? "password" : "text", autoComplete:"off"}}/>
+                        {showEye && <i><FaEye  className={classes.eyeIcon} onClick={() => setShowEye(!showEye)}/></i>}
+                        {!showEye && <i><FaEyeSlash className={classes.eyeIcon} onClick={() => setShowEye(!showEye)}/></i>}
+                    </div>
                     
-                    <Input id="confirmId" 
-                    label="Confirmar clave" 
-                    value={repeatedPassword} 
-                    onChangeHandler={onChangeRepeatedPasswordHandler}
-                    onBlurHandler={onBlurRepeatedPasswordHandler}
-                    isInputInvalid={isInputRepeatedPasswordInvalid}
-                    errorMessage={errorMessageRepeatedPassword}
-                    additionalAttributes={{type:"password", autoComplete:"off"}}/>
+                    <div className={classes.confirmPasswordContainer}>
+                        <Input id="confirmId" 
+                        label="Confirmar clave" 
+                        value={repeatedPassword} 
+                        onChangeHandler={onChangeRepeatedPasswordHandler}
+                        onBlurHandler={onBlurRepeatedPasswordHandler}
+                        isInputInvalid={isInputRepeatedPasswordInvalid}
+                        errorMessage={errorMessageRepeatedPassword}
+                        additionalAttributes={{type:showEyeRecovery ? "password" : "text", autoComplete:"off"}}/>
+                        {showEyeRecovery && <i><FaEye  className={classes.eyeIcon} onClick={() => setShowEyeRecovery(!showEyeRecovery)}/></i>}
+                        {!showEyeRecovery && <i><FaEyeSlash className={classes.eyeIcon} onClick={() => setShowEyeRecovery(!showEyeRecovery)}/></i>}
+                    </div>
                     <div className={classes.submitButton}>
-                        <Button classOfButton="borderButton" label="Registrarme" additionalStyle={{color:"black"}} />
+                        <Button label="Registrarme" isAvailable={true} 
+                        
+                        additionalStyle={{backgroundColor:"var(--primary-color)",
+                        color:"var(--on-primary-text-color)", width:"100%",
+                        margin:"16px 0px 32px 0px"}}
+                         />
                     </div>
                     </form>
             }

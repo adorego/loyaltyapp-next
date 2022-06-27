@@ -1,66 +1,53 @@
 
-@media screen and (min-width:500px) {
+/* @media screen and (max-width:600px) { */
     .inputClass{
         margin: auto;
         width: 100%;
-        display: block;
-        height: 2rem;
+        height: 56px;
+        border: 1px solid #8C6826;
+        border-radius: 8px;
+        padding-left: 10px;
+       
+
+        
        
     }
     .formControl{
-        margin: auto;
-        max-width: 30vw;
-        margin-bottom: 1rem;
-        color: grey;
+        padding-left: 0px;
+        padding-right:0px;
+        margin-top: 16px;
+        
     }
 
     .label{
-        color: grey;
-        margin-bottom: 1rem;
+        /* color: grey; */
+        margin-bottom: 100px;
         text-align: start;
         
     
         
     }
-}
+/* } */
 
-.formControl{
-        margin: auto;
-        max-width: 90vw;
-        margin-bottom: 1rem;
-    
-}
-.label{
-    color: grey;
-    margin-bottom: 1rem;
-    text-align: start;
-    
 
-    
-}
-.inputClass{
-    margin: auto;
-    width: 100%;
-    display: block;
-    height: 2rem;
-   
-}
+
+
 
 
 .invalid{
-    border: 1px solid red;
+    border: 1px solid #BB0000;
 }
 
 .helpMessage{
-    margin-top: 0;
+    margin-top: 8px;
     font-size: 12px;
-    color: gray;
-    text-align: end;
+    /* color: gray; */
+    text-align: start;
 }
 
 .errorMessage{
     margin-top: 0;
     text-align: end;
     font-size: 12px;
-    color: red;
+    color: #BB0000
 }

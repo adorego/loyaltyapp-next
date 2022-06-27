@@ -1,27 +1,42 @@
-import {Fragment, forwardRef, memo} from 'react';
+import {forwardRef, memo} from 'react';
 
 import InputInterface from "../../data/Input-interface";
 import classes from './Input.module.css';
 
-const Input = forwardRef<HTMLInputElement, InputInterface>((props, ref) => {
+const defaultValues = {
+    label:"",
+    withIcon:false,
     
-    const inputClass = `${classes.inputClass} ${props.isInputInvalid ? classes.invalid : ''}`;
+}
+const Input = forwardRef<HTMLInputElement, InputInterface>((props = defaultValues, ref) => {
+    
+    const inputClass = `${classes.inputClass} body1 ${props.isInputInvalid ? classes.invalid : ''}`;
     // console.log('inputClass:', inputClass);
     return(
         
             <div className={classes.formControl}>
                 <label className={classes.label} htmlFor={props.id}>{props.label}</label>
+                {props.helpMessage && <p className={`${classes.helpMessage} caption`}>{props.helpMessage}</p>}
                 <input className={inputClass} 
-                id={props.id} 
-                ref={ref}
-                onChange={props.onChangeHandler} 
-                onBlur={props.onBlurHandler} 
-                onFocus={props.onFocusHandler}
-                value={props.value}
-                {...props.additionalAttributes} />
-                {/* <p className={classes.helpMessage}>{props.helpMessage}</p> */}
+                    id={props.id} 
+                    ref={ref}
+                    onChange={props.onChangeHandler} 
+                    onInput={props.onInputChangeHandler}
+                    onBlur={props.onBlurHandler} 
+                    onFocus={props.onFocusHandler}
+                    value={props.value}
+                    
+                    {...props.additionalAttributes} >
+                </input>
                 {props.isInputInvalid && <p className={classes.errorMessage}>{props.errorMessage}</p>}
             </div>
+                    
+                   
+                    
+                
+                
+                
+            
     
     )
 });

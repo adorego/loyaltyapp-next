@@ -1,0 +1,77 @@
+.box{
+    color: grey;
+    text-align: center;
+    max-width: 400px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid lightgrey;
+    border-radius: 0px;
+    z-index: 20;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 20px;
+    width:280px;
+    height: 350px;
+    padding-bottom: 20px;
+    
+    
+   
+   
+}
+
+.ImageContainer{
+    padding: 0;
+    width: 100%;
+    height: auto;
+    position: relative;
+    border: 1px solid grey;
+}
+.InnerImageContainer{
+    margin: auto;
+    width: 50%;
+}
+
+.CrudToolBarContainer{
+    position: absolute;
+    top: 2px;
+    right: 5px;
+}
+
+.TitleContainer{
+    margin-top: 10px;
+    width: 100%;
+    height:auto;
+    line-height: 1.5;
+    background-color: lightgray;
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+.Title{
+    font-size: 18px;
+}
+
+.DescriptionContainer{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+}
+.DescriptionTitle{
+    padding-left: 10px; 
+    padding-right: 10px;
+    text-align: start;
+    text-decoration: underline;
+    font-size: 16px;
+    width: 40%;
+    height: auto;
+}
+.Description{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    text-align: start;
+    width: 60%;
+    height: auto;
+}

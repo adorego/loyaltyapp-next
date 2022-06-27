@@ -1,0 +1,27 @@
+.form{
+    max-width: 450px;
+}
+
+.selectBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+   
+}
+
+.tituloTipoPremio{
+    text-align: start;
+    color: grey;
+}
+
+.selectBox input[type=radio]{
+    border: 0px;
+    width:30px;
+    height: 30px;
+}
+
+.submitButton{
+    text-align: center;
+}

@@ -1,38 +1,71 @@
 .form{
-    max-width: 80vw;
     margin: auto;
+   
 
 }
 .title{
+    margin-bottom: 48px;
     text-align: center;
+    
 }
 
-.submitButton{
-    text-align: center;
+
+
+.passwordContainer i{
+    position: absolute;
+    top:40%;
+    right: 20px;
+    z-index: 2;
+    border: none;
+    cursor: pointer;
+    font-size: 38px;
+    color: lightgrey;
+    /* transform: translateX(2px); */
+    
+   
 }
+.passwordContainer{
+   width: 100%; 
+   position: relative;
+   margin-top: 32px;
+}
+
+
 
 
 
 .recoverLink{
     display: block;
-    text-align: center;
+    text-align: right;
     text-decoration: underline;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    padding-right: 8px;
+    margin-top: 32px;
+    margin-bottom: 48px;
+   
+}
+
+.submitButton{
+    margin: auto;
+    width: 320px;
+    height: 49px;
+    
+    
+}
+
+.registerButton{
+    margin-top: 24px;
+    width: 320px;
 }
 
 
-
-@media screen and (min-width:500px) {
-    .submitButton{
-        margin: auto;
-        width: 40vw;
-        max-width: 480px;
-    }
-    
+@media screen and (max-width:600px) {
     .form{
-        max-width:480px;
-        margin: auto;
-    
+        max-width: 90vw;
+    }
+}
+
+@media screen and (min-width:600px) {
+    .form{
+        max-width: 420px;
     }
 }

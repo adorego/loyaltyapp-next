@@ -1,18 +1,42 @@
-import React, { Fragment, memo, useEffect, useState } from "react";
+import React, { Fragment, memo, useCallback, useEffect, useState } from "react";
 
 import Button from "./Button";
 import ImageSelectorInterface from "../../data/UI/ImageSelector-Interface";
 import classes from "./ImageSelector.module.css";
-import { url } from "inspector";
+import { uiActions } from "../../store/ui-slice";
 import { useAppDispatch } from "../../hooks/store-hooks";
-import { useAppSelector } from "../../hooks/store-hooks";
 import { useRef } from "react";
 
 const ImageSelector = (props:ImageSelectorInterface) =>{
     const [fileSelected, setFileSelected] = useState<File>();
     const [readedFile, setReadedFile] = useState<string|ArrayBuffer>();
     const selectedFileInput = useRef<HTMLInputElement>(null);
+    const dispatch = useAppDispatch();
+    const {image:imageFile, imageLoaded} = props;
+    
+    useEffect(
+        () =>{
+            const readImageFromFile = async() =>{
+                if(imageFile){
+                    const response = await fetch(imageFile);
+                    const blob = await response.blob();
+                    const file = new File([blob], 'image.jpg', {type: blob.type});
+                    setFileSelected(file);
+                    imageLoaded(file, false);
+                    
+                }
+            }
 
+            try{
+                readImageFromFile();
+            }catch(error){
+                dispatch(uiActions.showNotification({show:true,message:error, color:'red'}));
+            }
+        },[imageFile, dispatch]
+    )
+    
+    
+    
     
 
     const submitLogo = (event:React.ChangeEvent<HTMLButtonElement>) =>{
@@ -25,7 +49,7 @@ const ImageSelector = (props:ImageSelectorInterface) =>{
         if(event && event.target && event.target.files && event.target.files[0]){
             const logo = event.target.files[0];
             setFileSelected(event.target.files[0]);
-            props.imageLoaded(logo);
+            imageLoaded(logo, true);
             const reader = new FileReader();
             reader.onload = (e) => {
                 if(e?.target?.result){
@@ -45,12 +69,22 @@ const ImageSelector = (props:ImageSelectorInterface) =>{
     
     return(
         <Fragment>
-            <p className={classes.label}>{props.label}</p>
+            <p className={`${classes.label} body1`}>{props.label}</p>
             <div className={classes.box} style={{backgroundImage: readedFile ? `url(${readedFile})` : props.image ? `url(${props.image})` : 'none'}}>
                 <div className={classes.selector}>
                     <input id="imageSelectorId" ref={selectedFileInput} type="file" name="file" onChange={changeHandler} style={{display:"none"}}  />
-                    <Button onClickHandler={submitLogo} label="Seleccionar" classOfButton="borderButton" additionalStyle={{display:"tableCell",color:"black", verticalAlign:"middle",backgroundColor:"lightgrey"}}></Button>
+                    <div className={classes.buttonContainer}>
+                        <Button isAvailable={true} onClickHandler={submitLogo} label="Seleccionar" 
+                        additionalStyle={{display:"tableCell",
+                        color:"var(--on-surface-text-color)", 
+                        verticalAlign:"middle",
+                        width:"120px",
+                        backgroundColor:"var(--surface-color)",
+                        border:"1px solid var(--secondary-color)",
+                        opacity:"0.8"}} />
+                    </div>
                 </div>
+               
             </div>
         </Fragment>
     )

@@ -1,0 +1,80 @@
+.Container{
+    width: 129px;
+    height: 69px;
+    border:1px solid #1A1A1A;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+   
+
+}
+
+.FirstRowContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 10px;
+    align-items:baseline
+    /* border: 1px solid grey; */
+    
+    
+}
+
+.icon{
+    align-self: center;
+    width: 50px;
+    height: 35px;
+    font-size: 32px;
+    /* border:1px solid grey; */
+
+}
+
+.datesContainer{
+    /* align-self: center; */
+    font-size: 12px;
+    align-self: stretch;
+    height: auto;
+    /* border:1px solid grey; */
+}
+
+.textContainer{
+    align-self: center;
+    font-size: 12px;
+    padding-right: 5px;
+    /* width: 100px; */
+    /* height: 15px; */
+}
+
+.TitleContainer{
+    font-size: 16px;
+    margin-top: -15px;
+    height: 15px;
+}
+
+.Title{
+    font-size: 14px;
+}
+
+.validityFrom{
+    /* margin-right: 2px; */
+}
+
+.validityto{
+    /* margin-right: 2px; */
+    
+}
+
+.ShareRewardSection{
+    height: 35px;
+}
+
+.RewardContainer{
+    width: 129px;
+    height: 89px;
+    border:1px solid #1A1A1A;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}

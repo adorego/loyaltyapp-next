@@ -1,0 +1,160 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    
+
+}
+.buttonContainer{
+    width: 320px;
+    max-width: 80vw;
+    padding: 32px 0px 32px 0px;
+}
+.listContainer{
+    display: flex;
+    margin: auto;
+    width: 100%;
+    
+
+}
+/*Resume Card Styles*/
+.resumeCardContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap:16px;
+}
+.resumeCardTitle{
+    margin: 0;
+    padding: 0;
+   
+}
+.resumeCardListSection{
+    height:auto;
+    width: 60%;
+}
+.resumeCardEffectivitySection{
+    width: 40%;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.resumeCardEffectivity{
+    padding: 0;
+    margin: 0;
+    
+}
+
+/*Modal */
+.modalContainer{
+    margin: auto;
+    text-align: center;
+    width: 320px;
+}
+
+/*Campaign Card Styles*/
+.campaignCardContainer{
+    display: flex;
+    flex-direction: column;
+}
+.campaignCardImage{
+    width: 100%;
+}
+.campaignCardInfoContainer{
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-end;
+    align-items: flex-end;
+    gap:16px
+}
+.campaignCardInfo{
+    margin-left: 8px;
+}
+.campaignCardActions{
+   margin: auto;
+}
+
+@media screen and (max-width:600px){
+    .container{
+        margin: 0px 16px 0px 16px;
+        padding: 0px 0px 0px 0px;
+    }
+}
+
+@media screen and (min-width:600px){
+    .container{
+        margin: 0px 32px 0px 32px;
+        padding: 0px 0px 0px 0px;
+    }
+}
+/* @media only screen and (min-width:120px) and (max-width:410px){
+    .listContainer{
+        margin-top: 16px;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .resumeCardContainer{
+        margin-top: 8px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    .resumeCardTitle{
+        margin-left:8px;
+    }
+    .resumeCardListSection{
+        margin-top: 8px;
+        
+        
+    }
+    .resumeCardEffectivitySection h2{
+        font-size: 32px;
+    }
+    
+}
+
+@media only screen and (min-width:410px) and (max-width:600px) {
+    .listContainer{
+        margin-top: 16px;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .resumeCardContainer{
+        margin-top: 8px;
+        margin-left: 8px;
+    }
+    .resumeCardTitle{
+        margin-left: 8px;
+    }
+    .resumeCardListSection{
+        margin-top: 8px;
+        
+        
+    }
+    
+}
+@media only screen and (min-width:600px) and (max-width:2300px) {
+    .container{
+        display: block;
+        
+    
+    }
+    .listContainer{
+        margin: auto;
+        margin-top: 16px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .resumeCardContainer{
+        margin-top: 8px;
+        margin-left: 16px;
+    }
+    .resumeCardTitle{
+        margin-left: 16px;
+    }
+    
+} */

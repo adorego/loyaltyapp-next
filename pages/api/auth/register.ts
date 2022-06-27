@@ -4,9 +4,10 @@ import * as collections from "../../../helpers/collectionNames";
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import API400Error from '../../../helpers/Api400Error';
+import { Api500Error } from './../../../helpers/Api500Error';
 import {MongoClient} from 'mongodb'
 import bcrypt from 'bcrypt';
-import transport from "../../../helpers/emailSMTP";
+import errorHandler from "../../../helpers/errorHandler";
 
 //const db_uri = 'mongodb+srv://loyaltyapp_user:camila2000@cluster0.bnes2.mongodb.net/loyaltyapp?retryWrites=true&w=majority'
 const db_uri = 'mongodb://loyaltyapp_user:camila2000@localhost:27017/loyaltyapp?retryWrites=true&w=majority';
@@ -44,33 +45,37 @@ const  handler = async (req:NextApiRequest, res:NextApiResponse) =>{
             if(await userCollection.find({email:email}).hasNext()){
                 throw new API400Error('Este correo ya está registrado');
             }
-            const insertUniversityResult = await universityCollection.insertOne({
-                normalize_name:normalize_name,
-                name:universityName,
-                logo:"",
-                configured:false,
-                sigla});
-
-            const insertUserResult = await userCollection.insertOne({
-                email, 
-                hash:hash, 
-                university_id:insertUniversityResult.insertedId, 
-                admin:true,
-                verified:false
-            });
             const verification_code = generate_verification_code();
-            // sendVerificationEmail(email, verification_code);
-            const insertedUniversity = await universityCollection.findOne({_id:insertUniversityResult.insertedId});
-            const insertedUser = await userCollection.findOne({_id:insertUserResult.insertedId});
-            res.status(201).json({message:"Operación exitosa!", data:{
-                university:{
-                    ...insertedUniversity
-                },
-                user:{
-                    ...insertedUser,
-                    verification_code:verification_code
-                }
-            }});
+            const sendEmailResult = await sendVerificationCodeViaEmail(email, verification_code, res);
+            if(sendEmailResult){
+                const insertUniversityResult = await universityCollection.insertOne({
+                    normalize_name:normalize_name,
+                    name:universityName,
+                    logo:"",
+                    configured:false,
+                    sigla});
+
+                const insertUserResult = await userCollection.insertOne({
+                    email, 
+                    hash:hash, 
+                    university_id:insertUniversityResult.insertedId, 
+                    admin:true,
+                    verified:false
+                });
+                const insertedUniversity = await universityCollection.findOne({_id:insertUniversityResult.insertedId});
+                const insertedUser = await userCollection.findOne({_id:insertUserResult.insertedId});
+                res.status(201).json({message:"Operación exitosa!", data:{
+                    university:{
+                        ...insertedUniversity
+                    },
+                    user:{
+                        ...insertedUser,
+                        verification_code:verification_code
+                    }
+                }});
+            }else{
+                throw new Api500Error("Error al enviar el correo de verificación");
+            }
             
 
         }
@@ -87,22 +92,31 @@ const  handler = async (req:NextApiRequest, res:NextApiResponse) =>{
     
 
 }
-const sendVerificationEmail = (email:string, code:string) =>{
-    const mailOptions = {
-        from: 'info@loyaltyapp.com.py', // Sender address
-        to: 'adoregoel@gmail.com', // List of recipients
-        subject: 'Código de verificación', // Subject line
-        html: `<h2 style="color:#ff6600;">Su código de verificación es:<span style="color:#FF0000">${code}</span></h2>`
-              
+const sendVerificationCodeViaEmail = async (email:string, code:string, res:NextApiResponse) =>{
+    try{
+        const response = await fetch('http://localhost:3000/api/email',{
+            method:'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body:JSON.stringify({
+                email,
+                subject:'Confirmación de Registro LoyaltyAPP',
+                content:"Tu código de verificación es:" +code
+            })
+        });
         
-    };
-    transport.sendMail(mailOptions, function(err, info) {
-        if (err) {
-          console.log(err)
-        } else {
-          console.log(info);
+        if(response.ok){
+            return true;
+        }else{
+            return false
         }
-     });
+        
+    }catch(e:any){
+        errorHandler(e, res);
+        return false;
+    }
+    
 }
 
 async function hashPassword(password:string):Promise<string>{

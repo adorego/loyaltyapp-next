@@ -1,0 +1,29 @@
+.container{
+    width: 100%;
+    max-width: 600px;
+}
+
+.startDayContainer{
+    width: 100%;
+    margin-top: 32px;
+}
+
+.endDayContainer{
+    width: 100%;
+    margin-top: 32px;
+}
+
+.termContainer{
+    width: 100%;
+    margin-top: 32px;
+}
+
+.placesContainer{
+    width: 100%;
+    margin-top: 32px;
+}
+
+.nextButtonContainer{
+    width: 100%;
+    margin-top: 32px;
+}

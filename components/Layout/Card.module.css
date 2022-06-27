@@ -1,0 +1,154 @@
+.box{
+    color: grey;
+    text-align: center;
+    max-width: 400px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid lightgrey;
+    border-radius: 0px;
+    z-index: 20;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 20px;
+    width:280px;
+    height: 820px;
+    padding-bottom: 20px;
+    
+    
+   
+   
+}
+
+.imageContainer{
+    padding: 0;
+    width: 100%;
+    height: auto;
+    position: relative;
+    border: 1px solid grey;
+}
+
+.PageHeader{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* border: 1px solid grey; */
+    border-bottom: 1px solid lightgray;
+
+    
+
+}
+.SectionTitle{
+    padding-left: 10px; 
+    padding-right: 10px;
+    text-align: start;
+    text-decoration: underline;
+    font-size: 16px;
+    width: 40%;
+    height: auto;
+}
+.sectionContent{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+    text-align: start;
+    width: 60%;
+    height: auto;
+   
+}
+
+.ExclusiveComunication{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+    /* border: 1px solid grey; */
+}
+
+.titleContainer{
+    margin-top: 10px;
+    
+    width: 100%;
+    height:auto;
+    font-size: 18px;
+    line-height: 1.5;
+    background-color: lightgray;
+    padding-top:10px;
+    padding-bottom: 10px;
+    /* border: 1px solid grey; */
+}
+
+.DescriptionContainer{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+    /* border: 1px solid grey; */
+}
+
+.ValiditySectionContainer{
+    /* margin-left: 10px; */
+}
+
+.TermSectionContainer{
+
+}
+
+.CardsSectionContainer{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 129px 129px;
+    grid-template-rows: 92px 92px;
+    column-gap: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.LandingSection{
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+    display: grid;
+    padding-left: 20%;
+    padding-bottom: 20px;
+    
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20px 20px 20px;
+    column-gap: 20px;
+    row-gap: 10px;
+
+
+}
+
+.LandingSectionTitle{
+    text-align: start;
+    
+}
+
+.LandingSectionMark{
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    font-size:32px;
+    
+}
+
+.LandingTitleContainer{
+    margin-top: 10px;
+    border: 1px solid lightgray;
+}
+
+.CrudToolBarContainer{
+    position: absolute;
+    top: 2px;
+    right: 5px;
+}

@@ -1,0 +1,124 @@
+.LandingTemplateList{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    
+
+}
+
+.titleContainer{
+    margin: 16px 0px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    vertical-align: bottom;
+    height: auto;
+    max-width: 1200px;
+}
+.title{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+
+}
+.titleHelp{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    color: var(--secondary-color);
+    padding-bottom: 8px;
+}
+/*Title Help Content*/
+.helpContentContainer{
+    display: flex;
+    flex-direction: column;
+    
+}
+.HelpExample{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+.seeHelpExample{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+/*New Landing Section*/
+.newLandingContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 16px 0px 16px 0px;
+    width: 100%;
+    max-width: 1200px;
+    
+}
+.typeLabel{
+    display: block;
+    margin-bottom: 8px;
+}
+.selectLandingType{
+    height: 50px;
+    border: 1px solid var(--secondary-color);
+}
+.newLandingButtonContainer{
+    margin-bottom: 16px;
+}
+
+@media screen and (max-width:600px){
+    .titleContainer{
+        margin: 0px 16px 0px 16px;
+    }
+    .newLandingButtonContainer{
+        margin: 0px 0px 0px 0px;
+    }
+    .LandingTemplateList{
+        margin: 0px 16px 0px 16px;
+        padding: 0px 0px 0px 0px;
+    }
+    .newLandingContainer{
+        margin: 0px 16px 0px 16px;
+        padding: 0px 0px 0px 0px;
+    }
+    .landingTypeSelectionContainer{
+        margin: 32px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+    .helpContentContainer{
+        margin: 16px 16px 16px 16px;
+        padding: 0px 0px 0px 0px;
+    }
+}
+@media  only screen and (min-width:600px) {
+    .LandingTemplateList{
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+    
+    }
+    .newLandingContainer{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+    .newLandingButtonContainer{
+        margin: 0px 0px 0px 32px;
+    }
+    .selectLandingType{
+        padding: 0px 0px 0px 0px;
+    }
+    .titleContainer{
+        margin: 0px 32px 0px 32px;
+    }
+    .titleContainer h4{
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+}

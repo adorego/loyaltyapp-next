@@ -1,0 +1,45 @@
+.container{
+    width: 100%;
+}
+.titleContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:8px;
+    margin-bottom: 16px;
+}
+
+.iterationNumberContainer{
+    background-color: var(--primary-color);
+    text-align: center;
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0% 0% 0% 0%;
+    padding: 0%;
+    position: relative;
+}
+
+.iterationNumber{
+    color: var(--on-primary-text-color);
+    margin: 0% 0% 0% 0%;
+    position: absolute;
+    top: 7%;
+    left: 35%;
+}
+
+.sectionTitle{
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+}
+.modalBenefitsContainer{
+    margin-top: 32px;
+    width: 320px;
+    height: 600px;
+    margin-left: 8px;
+    margin-left: 8px;
+}

@@ -1,33 +1,82 @@
-.title{
-    color: grey;
-}
-.subtitle{
+.topElements{
+    width: 100%;
+    /* max-width: 60vw; */
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-
+    justify-content: space-between;
+    max-width: 100%;
 }
-.circle{
-    /* display: table; */
-    background-color: #B11016;
-    border: 2px solid #666;
+.helpLinkContainer{
+    display: none;
+}
+.helpLink{
+    color: var(--on-surface-text-color);
+    
+}
+
+.centerTitle{
     text-align: center;
-    font: 24px Arial, sans-serif;
-    color: white;
-    border-radius:50%;
-    width:36px;
-    height:36px;
-    padding: 2px;
-    margin-right: 2%;
-    vertical-align: middle;
-}
-.number{
-    /* display: table-cell;
-    vertical-align: middle; */
-    align-self: center;
 }
 
-.subtitleText{
-    color: grey;
+#titleId{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+@media screen and (max-width:600px) {
+    .topElements{
+        padding: 8px 8px 0px 8px;
+    }
+    .returnIconContainer{
+        margin: 0px 0px 0px 8px;
+        padding: 0px 0px 0px 0px;
+    }
+    .title{
+        margin: 8px 0px 0px 8px;
+        padding: 0px 0px 0px 0px;
+    }
+    .helpLinkContainer{
+        margin: 0px 8px 0px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+    .subTitleText{
+        margin: 0px 0px 0px 8px;
+        padding: 0px 0px 0px 0px;
+    }
+    .explanationText{
+        margin: 0px 0px 0px 8px;
+        padding: 0px 0px 0px 0px;
+    }
+    .highlightText{
+        margin: 0px 0px 0px 8px;
+        padding: 0px 0px 0px 0px;
+    }
+}
+@media screen and (min-width:600px) {
+    .topElements{
+        padding: 16px 0px 0px 8px;
+    }
+    .returnIconContainer{
+        margin: 0px 0px 0px 16px;
+        padding: 0px 0px 0px 0px;
+    }
+    .title{
+        margin: 32px 0px 0px 16px;
+        padding: 0px 0px 0px 0px;
+    }
+    .helpLinkContainer{
+        margin: 0px 16px 0px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+    .subTitleText{
+        margin: 16px 0px 32px 16px;
+        padding: 0px 0px 0px 0px;
+    }
+    .explanationText{
+        margin: 0px 0px 0px 16px;
+        padding: 0px 0px 0px 0px;
+    }
+    .highlightText{
+        margin: 0px 0px 0px 16px;
+        padding: 0px 0px 0px 0px;
+    }
 }

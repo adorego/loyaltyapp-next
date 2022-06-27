@@ -1,0 +1,35 @@
+.TabContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    vertical-align: middle;
+    padding: 0;
+    width: 100%;
+    /* border: 1px solid lightgray; */
+
+}
+
+.BeneficioTab{
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    border-right: 1px solid lightgray;
+    cursor: pointer;
+    
+
+}
+
+.LandingTab{
+    margin: auto;
+   width: 100%;
+   text-align: center;
+   cursor: pointer;
+}
+
+.benefitTabText{
+    font-size: 22px;
+}
+
+.landingTabText{
+    font-size: 22px;
+}

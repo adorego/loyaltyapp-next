@@ -29,20 +29,20 @@ const useHttp = () =>{
             method:'POST',
             body:data
         });
-        console.log('Response:', response);
+        // console.log('Response:', response);
         setLoading(false);
         const response_object = await response.json();
-        console.log('Response_object:', response_object);
+        // console.log('Response_object:', response_object);
         if(!response.ok){
             setError({state:true, message:response_object.name});
             return
         }
-        console.log("Response json:", response_object);
+        // console.log("Response json:", response_object);
         return response_object;
     }
 
     const getDataRequest = async (uri:string) =>{
-        console.log('getDataRequest, uri:', uri);
+        // console.log('getDataRequest, uri:', uri);
         setLoading(true);
         const response = await fetch(uri, {
             method:'GET',

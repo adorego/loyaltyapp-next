@@ -1,9 +1,186 @@
+@font-face {
+  font-family: 'Lato';
+  src: url('../asset/Lato/Lato-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+  
+}
+h1{
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 121px;
+  font-style: normal;
+  letter-spacing: -1.5px;
+  font-size: 101px;
+}
+h1 .bold{
+  font-weight: bold;
+}
+h2{
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 76px;
+  font-style: normal;
+  letter-spacing: -0.5px;
+  font-size: 63px;
+}
+h2 .bold{
+  font-weight: bold;
+}
+
+
+h3{
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 60px;
+  font-style: normal;
+  letter-spacing: -0.5px;
+  font-size: 50px;
+}
+h3 .bold{
+  font-weight: bold;
+}
+h4{
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 43px;
+  font-style: normal;
+  letter-spacing: 0.25px;
+  font-size: 36px;
+}
+h4 .bold{
+  font-weight: bold;
+}
+h5{
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 30px;
+  font-style: normal;
+  letter-spacing: 0.25px;
+  font-size: 25px;
+}
+h5 .bold{
+  font-weight: bold;
+}
+h6{
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 25px;
+  font-style: normal;
+  letter-spacing: 0.15px;
+  font-size: 21px;
+}
+h6 .bold{
+  font-weight: bold;
+}
+
+.subtitle1{
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 20px;
+  font-style: normal;
+  letter-spacing: 0.15px;
+  font-size: 17px;
+}
+
+.body1{
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 20px;
+  font-style: normal;
+  letter-spacing: 0.5px;
+  font-size: 17px;
+}
+
+.body2{
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 18px;
+  font-style: normal;
+  letter-spacing: 0.25px;
+  font-size: 15px;
+}
+@media only screen and (min-width:100px) and (max-width:1200px){
+  h1{
+      font-size: calc(61px + 6 * ((100vw - 320px) / 680));
+  }
+  h2{
+      font-size: calc(41px + 6 * ((100vw - 320px) / 680));
+  }
+  h3{
+      font-size: calc(31px + 6 * ((100vw - 320px) / 680));
+  }
+  h4{
+      font-size: calc(21px + 6 * ((100vw - 320px) / 680));
+  }
+
+  h5{
+    font-size: calc(18px + 6 * ((100vw - 320px) / 680));
+  }
+  
+  .body2{
+    font-size: calc(12px + 6 * ((100vw - 320px) / 680));
+  }
+  
+  
+}
+@media screen and (min-width:1200px) {
+  
+}
+
+.button-app{
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 17px;
+  font-style: normal;
+  letter-spacing: 1.25px;
+  font-size: 18px;
+}
+.caption{
+  font-family: Lato;
+  font-weight: 400;
+  line-height: 16px;
+  font-style: normal;
+  letter-spacing: 0.4px;
+  font-size: 13px;
+}
+
+.light-shadow{
+  box-shadow: 0px 16px 24px 2px rgba(0, 0, 0, 0.14);
+  
+}
+.mid-shadow{
+  box-shadow: 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
+}
+.tick-shadow{
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+:root{
+  --primary-color:#05499C;
+  --primary-light-color: #5074CE;
+  --backGround-color:#FFFFFF;
+  --surface-color:#FFFFFF;
+  --error-color:#BB0000;
+  --secondary-color: #DDB366;
+  --on-primary-text-color:#FFFFFF;
+  --on-secondary-text-color:#FFFFFF;  
+  --on-surface-text-color:#1A1A1A;
+  --on-backGround-text-color:#1A1A1A;
+  --on-error-text-color:#FFFFFF;
+
+}
+
+
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+  font-family: Lato;
+  color: #1A1A1A;
 }
 
 a {
@@ -14,3 +191,5 @@ a {
 * {
   box-sizing: border-box;
 }
+
+

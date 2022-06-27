@@ -1,0 +1,30 @@
+.container{
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+}
+.container h3{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+.container h6{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+.saveButton{
+    text-align: center;
+ }
+
+ @media screen and (max-width:600px) {
+     .container{
+         max-width: 90vw;
+     }
+     .container h6{
+        margin: 0px 0px 16px 0px;
+     }
+ }
+ @media screen and (min-width:600px) {
+    .container h6{
+        margin: 0px 0px 32px 0px;
+    }
+}

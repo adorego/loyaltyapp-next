@@ -1,0 +1,62 @@
+.container{
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+}
+
+@media screen and (max-width:600px) {
+    .inputContainer{
+        margin: 0px 0px 0px 0px;
+        height: 22px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+       
+    }
+    .inputContainer input{
+        border: 2px solid red;
+        width: 32px;
+        height: 32px;
+        vertical-align: middle;
+    }
+    .inputContainer label{
+
+    }
+    .selectionContainer{
+        padding: 16px 0px 0px 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 32px;
+    }
+}
+
+@media screen and (min-width:600px) {
+    .inputContainer{
+       margin: 8px 0px 0px 8px; 
+       display: flex;
+       flex-direction: row;
+       justify-content: center;
+       align-items: center;
+       gap:8px;
+    
+    }
+    .inputContainer input{
+        width: 48px;
+        height: 48px;
+    }
+    #institucionalSelectorId{
+        margin-top: 32px;
+    }
+    .selectionContainer{
+        padding: 0px 16px 0px 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 32px;
+    }
+    
+}

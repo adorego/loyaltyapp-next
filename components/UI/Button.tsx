@@ -1,26 +1,34 @@
-import ButtonInterface from "../../data/UI/Button-interface";
 import classes from "./Button.module.css";
 import {memo} from 'react';
 
-const Button =(props:ButtonInterface) => {
-    const {classOfButton} = props;
-    const classNames = classes[classOfButton];
-    const disabledButton = <button onClick={props.onClickHandler} className={classNames} style={props.additionalStyle} disabled>
+export interface ButtonInterface{
+    isAvailable:boolean;
+    label:string;
+    onClickHandler?:any;
+    additionalStyle?:{};
+    children?: React.ReactNode;
+}
+const Button =({isAvailable, ...props}:ButtonInterface) => {
+    
+
+    const dynamicClass = classes["button-per"] + " button-app"; //button-app is a global style
+    const disabledButton = <button onClick={props.onClickHandler} className={dynamicClass} style={props.additionalStyle} disabled>
                                 {props.label}{props.children}
                             </button>
-    const enabledButton =  <button onClick={props.onClickHandler} className={classNames} style={props.additionalStyle}>
+    const enabledButton =  <button onClick={props.onClickHandler} className={dynamicClass} style={props.additionalStyle}    >
                                 {props.label}{props.children}
                             </button>
 
 
-if(props.disabled){
-    // console.log("disabled button");
+if(!isAvailable){
+    // console.log('disabled button');
     return disabledButton;
 }else{
+    // console.log('Enabled button');
     return enabledButton;
 }
     
 }
 
 
-export default memo(Button);
+export default Button;

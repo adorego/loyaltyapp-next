@@ -1,15 +1,17 @@
 import * as collections from "../../../../helpers/collectionNames";
 
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { isFileValid, saveFile } from "../../../../helpers/FileUploadHelper";
 
 import { API400Error } from './../../../../helpers/Api400Error';
 import { Api500Error } from './../../../../helpers/Api500Error';
 import BaseError from '../../../../helpers/baseError';
 import { MongoClient } from 'mongodb';
 import connect from "../../../../dataBase/dataBase";
+import errorHandler from "../../../../helpers/errorHandler";
 import formidable from "formidable";
 import fs from "fs";
-import path from 'path';
+import sizeof from 'image-size'
 
 export  const config = {
     api:{
@@ -42,83 +44,69 @@ const handler = async (req:NextApiRequest, res:NextApiResponse) => {
            
              
             form.parse(req, async function(err, fields, files){
-                if(err){
-                    throw new API400Error('El archivo no se puede abrir');
-                }
-                 
-                
-                const receivedFile:any = files.file;
-
-                const isValid = isFileValid(receivedFile);
-                if (!isValid) {
-                    // throes error if file isn't valid
-                    throw new API400Error('El archivo no es un archivo valido');
-                }
-                // console.log("file:", receivedFile);
-               
-                const fileName = 'logo.'+ receivedFile.mimetype.split("/").pop();
-                saveFile(receivedFile, path, fileName);
-                const completePath = path  + fileName;
-                const frontEndCompletePath = frontEndPath + fileName;
-                
-                // //Save into DataBase
-                dbClient = await connect();
-                const db = dbClient?.db();
-                const universityCollection =  db?.collection(collections.UNIVERSITIES);
-                
-                const filter = {sigla:universityId};
-                const options = {upsert:false};
-                const updateDoc = {
-                    $set:{
-                        logo:completePath,
-                        frontEndCompletePath
+                try{
+                    if(err){
+                        throw new API400Error('El archivo no se puede abrir');
                     }
-                }
-                const result = await universityCollection?.updateOne(filter, updateDoc, options);
+                    
+                    
+                    const receivedFile = files.file;
+                    
+
+                    const isValid = isFileValid(receivedFile);
+                    // console.log('isValid:', isValid);
+                    if (!isValid) {
+                        console.log('La extension del archivo no es valida');
+                        throw new API400Error('El archivo no tiene una extensión válida');
+                    }
+                    // console.log("file:", receivedFile);
                 
-                res.status(201).json({frontEndCompletePath:frontEndCompletePath});
+                    const fileName = 'logo.'+ receivedFile.mimetype.split("/").pop();
+                    
+                    saveFile(receivedFile, path, fileName);
+                    const completePath = path  + fileName;
+                    const frontEndCompletePath = frontEndPath + fileName;
+                    const dimensions = sizeof(completePath);
+                    // //Save into DataBase
+                    dbClient = await connect();
+                    const db = dbClient?.db();
+                    const universityCollection =  db?.collection(collections.UNIVERSITIES);
+                    
+                    const filter = {sigla:universityId};
+                    const options = {upsert:false};
+                    const updateDoc = {
+                        $set:{
+                            logo:completePath,
+                            frontEndCompletePath,
+                            logo_width:dimensions.width,
+                            logo_height:dimensions.height
+                        }
+                    }
+                    const result = await universityCollection?.updateOne(filter, updateDoc, options);
+                    if(result?.modifiedCount === 1){
+                        res.status(201).json({frontEndCompletePath:frontEndCompletePath, logo:completePath});
+                    }else{
+                        throw new Api500Error('Error al guardar el logo en el servidor');
+                    }
+                }catch(error:any){
+                    errorHandler(error, res);
+                }
             });
             
             
         }
         catch(error:any){
-                console.log('Ocurrió un error, se envia al cliente');
-                if(typeof error === typeof BaseError){
-                    res.status(error.statusCode).json(error);
-                }else{
-                    res.status(500).json(error);
-                }
+            errorHandler(error, res);
         }finally{
+            console.log('Antes de cerrar la conexión');
             await dbClient?.close()
         }
     }
 }
 
-const isFileValid = (file:any) =>{
-    const type = file.mimetype.split("/").pop();
-    const validType = ["jpg", "jpeg", "png", "pdf"];
-    if(validType.indexOf(type) === -1){
-        return false;
-    }
-    return true;
-}
 
-const saveFile =  async (file:any, path:string, fileName:string) =>{
-    const data = fs.readFileSync(file.filepath);
-    const folderName = path;
-    try{
-        if(!fs.existsSync(folderName)){
-            console.log('No existe la carpeta.');
-            fs.mkdirSync(folderName);
-        }
-    }catch(error){
-        throw new Api500Error('Error al guardar el archivo en el servidor!.');
-    }
-    fs.writeFileSync(`${folderName}/${fileName}`, data, {flag: 'a+'});
-    fs.unlinkSync(file.filepath);
-    
 
-}
+
 
 export default handler;
 

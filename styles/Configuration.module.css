@@ -1,38 +1,57 @@
-.title{
-    color: grey;
+.container{
+    max-width: 100%;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    
 }
-.subtitle{
+
+.navSection{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-
-}
-.circle{
-    /* display: table; */
-    background-color: #B11016;
-    border: 2px solid #666;
-    text-align: center;
-    font: 32px Arial, sans-serif;
-    color: white;
-    border-radius:50%;
-    width:36px;
-    height:36px;
-    padding: 8px;
-    margin-right: 2%;
-    vertical-align: middle;
-}
-.number{
-    /* display: table-cell;
-    vertical-align: middle; */
-    align-self: center;
+    border-top: 2px solid grey;
+    border-bottom:2px solid grey;
+    text-align: justify;
+    max-width: 100%;
+    
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    
 }
 
-.subtitleText{
-    color: grey;
+.navSection:hover{
+    box-shadow: 0px 20px 20px 2px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
+    
 }
 
-.siguienteBox{
-    margin-top: 5%;
-    text-align: center;
+.arrowSection{
+    
 }
+
+
+#perfilTextId, #logoTextId, #colorTextId{
+    font-size: 16px;
+}
+
+@media screen and (max-width: 600px){
+    .navSection{
+        padding: 16px 0px 16px 0px;
+    }
+    .textSection{
+        margin: 0px 0px 0px 8px;
+    }
+}
+
+@media screen and (min-width:600px){
+    .navSection{
+        padding: 32px 0px 32px 0px;
+    }
+    .textSection{
+        margin: 0px 0px 0px 16px;
+    }
+}
+
+
+
+

@@ -9,27 +9,28 @@ export const fetchAuthData =
         
     return async (dispatch) => {
         const fetchData = async () =>{
-            dispatch(uiActions.setLoading(true));
-            const result = await fetch('/api/auth/authData');
-            const resultObject = await result.json();
+            
+            const result = await fetch('/api/authData');
+            const data = await result.json();
+            console.log("data:", data);
             if(!result.ok){
-                dispatch(uiActions.showNotification({show:true, message:resultObject.name}));
+                dispatch(uiActions.showNotification({show:true, message:data.message, color:"red"}))
                 
             }else{
-                resultObject.user.email = email;
-                console.log('Data before dispatching:', resultObject);
-                dispatch(authActions.login(resultObject));
+                data.user.email = email;
+                dispatch(authActions.login(data));
                 
                 
             }
+            // dispatch(uiActions.setLoading(false));
             
         };
         try{
-            fetchData();
+            await fetchData();
              
             
         }catch(error:any){
-            dispatch(uiActions.showNotification({show:true, message:error.message}));
+            dispatch(uiActions.showNotification({show:true, message:error.message, color:"red"}));
         }
         
     };

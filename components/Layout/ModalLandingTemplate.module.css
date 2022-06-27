@@ -1,0 +1,150 @@
+.ModalOverlay{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 100vw;
+    height: auto;
+    padding-bottom: 20px;
+    /* background-color: rgba(0,0,0,0.9);  */
+    background-color: beige;
+    z-index: 150;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+
+   
+}
+
+
+.ImageContainer{
+    /* position: absolute; */
+    position: relative;
+    width: 100%;
+    height: 300px;
+    opacity: 1;
+}
+.ImageBackGround{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+    
+}
+
+.UniversityTitle{
+    background-color: #C5C6D0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 30px 30px 0px 0px;
+    margin-top: -30px;
+    opacity: 0.8;
+    
+
+}
+
+.UniversityTitleText{
+    line-height: 1.6;
+}
+
+.BenefitSection{
+    position: relative;
+    top: -60px;
+    opacity: 1;
+    padding-top: 20px;
+    text-align: center;
+    background-color: white;
+    z-index: 20;
+    width: 100%;
+    height: auto;
+    border-radius: 30px 30px 30px 30px;
+    
+}
+
+.benefitTitleContainer{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding-top: 10px;
+    background-color: #C5C6D0;
+    color:inherit;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 100px;
+}
+.benefitTitle{
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+
+.Section1Container{
+    background-color: white;
+    color: inherit;
+    width: 100%;
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: -60px;
+}
+.Section2Container{
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: auto;
+}
+.Section3Container{
+    background-color: white;
+    color: inherit;
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.Section1Title{
+    margin-top: 20px;
+    font-size: 34px;
+}
+.Section2Title{
+    
+}
+.Section3Title{
+    
+}
+
+@media only screen and (max-width:400px) {
+    
+}
+
+
+.btn-grad {background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%)}
+.btn-grad {
+   /* margin: 10px; */
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+   margin: auto;
+   cursor: pointer;
+   font-size: 18px;
+   line-height: 1.3;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }

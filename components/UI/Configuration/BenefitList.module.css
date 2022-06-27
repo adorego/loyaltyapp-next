@@ -1,0 +1,57 @@
+.container{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    
+
+}
+.buttonContainer{
+    width: 320px;
+    max-width: 80vw;
+    
+}
+.listContainer{
+    width: 100%;
+    display: flex;
+    margin: auto;
+    
+
+}
+.container h4{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+@media only screen and (max-width:600px){
+    .listContainer{
+        margin-top: 16px;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .container{
+        margin: 16px 0px 0px 16px;
+    }
+    .container h4{
+        margin: 0px 0px 8px 0px;
+    }
+
+    
+}
+
+@media only screen and (min-width:600px) {
+    .container{
+        margin: 32px 0px 0px 32px;
+    
+    }
+    .listContainer{
+        margin: auto;
+        margin-top: 16px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .container h4{
+        margin: 0px 0px 16px 0px;
+    }
+    
+    
+}

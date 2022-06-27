@@ -56,6 +56,7 @@ const authSlice = createSlice({
         },
         load_logo(state, action){
             state.university.frontEndCompletePath = action.payload.frontEndCompletePath;
+            state.university.logo = action.payload.logo;
         }
     }
 });

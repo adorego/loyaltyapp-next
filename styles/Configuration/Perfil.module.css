@@ -1,0 +1,49 @@
+.formContainer{
+    max-width: 420px;
+    margin: auto; 
+}
+
+.passwordContainer i{
+    position: absolute;
+    top:40%;
+    right: 20px;
+    z-index: 2;
+    border: none;
+    cursor: pointer;
+    font-size: 38px;
+    color: lightgrey;
+    /* transform: translateX(2px); */
+    
+   
+}
+
+.formContainer h3{
+    margin-top: 30px;
+    margin-bottom: 5px;
+    
+}
+.passwordContainer{
+   width: 100%; 
+   position: relative;
+}
+
+.saveButton{
+   text-align: center;
+}
+
+#subTitle{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+.title{
+    text-align: start;
+}
+
+@media screen and (max-width:600px) {
+
+    .formContainer{
+        max-width: 90vw;
+    }
+    
+}

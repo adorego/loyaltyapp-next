@@ -3,7 +3,8 @@ import {createSlice} from "@reduxjs/toolkit";
 const initialState = {
     notification:{
         show:false,
-        message:"Hubo un error"
+        message:"Hubo un error",
+        color:"green"
     },
     loading:false
 }
@@ -14,9 +15,11 @@ const uiSlice = createSlice({
     reducers:{
         showNotification(state, action){
             state.notification = action.payload;
+            state.loading = state.loading;
         },
         setLoading(state, action){
-            state.loading = action.payload
+            state.loading = action.payload,
+            state.notification = state.notification
         }
     }
 });

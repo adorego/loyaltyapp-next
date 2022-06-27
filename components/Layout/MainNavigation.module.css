@@ -1,20 +1,43 @@
-.shareButton{
-    margin-top: 2rem;
-    margin: auto;
-    text-align: center;
-    max-width: 80vw;
+.mainContent{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    width: 100%;
+    max-width: calc(100vw);
+    height: 100%;
+    /* overflow: hidden; */
 }
-.main{
-    margin-left:2%;
-    margin-right: 2%;
-    min-height: 480px;
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+.sideBar{
+    z-index: 1;
+    border: 1px solid #010101;
+    position: absolute;
+    left: 0px;
+    top:0px;
+    width: 200px;
 }
 
-@media screen and (min-width:500px) {
-.shareButton{
-    margin-top: 2rem;
-    width: 40vw;
-    max-width: 480px;
-    margin: auto;
+.main{
+   
+    width: 100%;
+    height: auto;
 }
+
+@media screen and (max-width:600px) {
+    .main{
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width:600px) {
+    .main{
+        max-width: calc(100% - 200px);
+        margin-left: 200px;
+    }
+    
 }

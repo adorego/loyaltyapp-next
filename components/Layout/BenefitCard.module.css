@@ -1,0 +1,55 @@
+.container{
+    width: 100%;
+    height: auto;
+    padding-bottom: 16px;
+    
+}
+.titleContainer,  .pageHeaderContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: 0px 0px 0px 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.descriptionContainer, .exclusiveCommunicationContainer{
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: 0px 0px 0px 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.title, .description, .pageHeader, .exclusiveCommunication{
+    vertical-align: middle;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    height: 20px;
+}
+.titleContent, .pageHeaderContent{
+    vertical-align: middle;
+    /* margin: 16px 0px 0px 8px ; */
+    margin-left: 8px;
+    margin-top: 16px;
+}
+.descriptionContent, .exclusiveCommunicationContent{
+    margin: 0px 0px 16px 0px;
+    padding: 0px 0px 0px 0px;
+}
+.previewLink{
+    color: var(--secondary-color);
+    text-align: end;
+    padding-right: 16px;
+}
+.selectionButton{
+    width: 100%;
+    text-align: center;
+    padding-left: 8px;
+    padding-right: 8px;
+   
+}
+.benefitImage{
+    border-radius: 8px;
+}
